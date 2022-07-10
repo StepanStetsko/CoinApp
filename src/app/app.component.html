@@ -1,0 +1,20 @@
+
+<select id="select-exchange" (change)="changeCurrency($any($event.target).value)">
+  <option value=""></option>
+  <option value="USD/UAH">USD/UAH</option>
+  <option value="BTC/USD">BTC/USD</option>
+</select> 
+
+<div>
+  <h2>{{exchangeRate.asset_id_base}}/{{exchangeRate.asset_id_quote}}</h2>
+  <span>{{exchangeRate.rate | currency}}</span>
+</div>
+
+<canvas baseChart
+[datasets]="barChartData" 
+[labels]="barChartLabels"
+[options]="barChartOptions"
+[type]="'line'">
+</canvas> 
+
+
