@@ -25,7 +25,7 @@ export class ExchangeService {
     date.setMonth(date.getMonth() - 1)
   
     return this.http.get<TimeseriesData[]>(
-      `${environment.mainUrl}/v1/exchangerate/${currency}/history?period_id=12HRS&time_start=${moment(date).format('YYYY-MM-DDTHH:MM:SS')}&apiKey=${environment.apiKey}`
+      `${environment.mainUrl}/v1/exchangerate/${currency}/history?period_id=12HRS&time_start=${moment(date).format('YYYY-MM-DDThh:mm:ss')}&apiKey=${environment.apiKey}`
       )
   }
 
