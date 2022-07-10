@@ -36,13 +36,13 @@ export class AppComponent implements OnInit {
     this.connectToSocket()
   }
 
-private sendToWebSocket(){
+private sendToWebSocket(): void {
   this.webSocketService.sendData(new WebsocketRequest(this.currentCurrency))
 }
 
-private connectToSocket(){
+private connectToSocket(): void {
     this.webSocketService.openConnection().subscribe((data: WebsocketResponse) => {
-  this.webSocketMessage = data      
+  this.exchangeRate.rate = data.price      
 })
 }
 

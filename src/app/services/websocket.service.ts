@@ -13,13 +13,13 @@ export class WebsocketService {
     return this.socket
   }
 
-  sendData(data: any){
+  sendData(data: any): void{
     if(this.socket){
       this.socket.next(data)
     }
   }
   
-  closeConnection(){
+  closeConnection(): void{
     if(this.socket){
       this.socket.complete()
     }
